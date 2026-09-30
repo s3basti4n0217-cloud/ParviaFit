@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARVIA | Rescatamos frutas, creamos delicias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.25);
+            }
+            .bg-gradient-fresa {
+                background: linear-gradient(135deg, #ff7e9f 0%, #ff4d6d 100%);
+            }
+            .bg-gradient-durazno {
+                background: linear-gradient(135deg, #ffd166 0%, #ff9f1c 100%);
+            }
+            .bg-gradient-mora {
+                background: linear-gradient(135deg, #7b2cbf 0%, #5a189a 100%);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parvia: {
+                            rosa: '#FF4D6D',
+                            durazno: '#FF9F1C',
+                            mora: '#5A189A',
+                            crema: '#FFF8E6',
+                            claro: '#F0EFFF',
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #F0EFFF;
+            background-image: radial-gradient(circle at top right, rgba(255,77,109,0.1) 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(255,159,28,0.1) 0%, transparent 40%);
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-poppins bg-white text-gray-800">
+    <!-- Barra de Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="Logo.jpeg" alt="Logo PARVIA" class="h-12 w-auto">
+                <span class="font-bold text-xl text-parvia-rosa">PARVIA</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#inicio" class="hover:text-parvia-rosa transition-colors">Inicio</a>
+                <a href="#que-es" class="hover:text-parvia-rosa transition-colors">¿Qué es Parvia?</a>
+                <a href="#nuestros-parfaits" class="hover:text-parvia-rosa transition-colors">Nuestros Parfaits</a>
+                <a href="#impacto" class="hover:text-parvia-rosa transition-colors">Nuestro Impacto</a>
+                <a href="#contacto" class="hover:text-parvia-rosa transition-colors">Contáctanos</a>
+            </div>
+            <button class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sección Principal / Hero -->
+    <section id="inicio" class="hero-pattern min-h-screen pt-20 flex items-center overflow-hidden">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-black leading-tight text-gray-900">
+                        Rescatamos frutas,<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-parvia-rosa to-parvia-durazno">creamos delicias</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 max-w-lg">
+                        Convertimos frutas con alto nivel de maduración en parfaits frescos, deliciosos y responsables. Cada bocado cuida el planeta.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#nuestros-parfaits" class="bg-parvia-rosa hover:bg-parvia-rosa/90 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all">
+                            Ver nuestros parfaits
+                        </a>
+                        <a href="#que-es" class="bg-white border-2 border-parvia-durazno text-parvia-durazno hover:bg-parvia-durazno/5 font-semibold px-8 py-3 rounded-full transition-all">
+                            Conoce nuestra historia
+                        </a>
+                    </div>
+                    <div class="flex gap-6 pt-4">
+                        <div class="text-center">
+                            <p class="font-bold text-2xl text-parvia-rosa">100%</p>
+                            <p class="text-sm text-gray-600">Frutas aprovechadas</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-2xl text-parvia-durazno">Cero</p>
+                            <p class="text-sm text-gray-600">Desperdicio</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-2xl text-parvia-mora">Sabor</p>
+                            <p class="text-sm text-gray-600">Garantizado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="Logo.jpeg" alt="Personaje PARVIA" class="float-animation max-w-xs md:max-w-md mx-auto">
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-parvia-durazno/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -top-6 -left-6 w-40 h-40 bg-parvia-rosa/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Qué es Parvia? -->
+    <section id="que-es" class="py-24 bg-parvia-claro">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-6">¿Qué es <span class="text-parvia-rosa">PARVIA</span>?</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Parvia nace con el propósito de <strong>reducir el desperdicio de frutas</strong> mediante su aprovechamiento responsable.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Misión -->
+                <div class="bg-white p-8 rounded-3xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-gradient-fresa rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-parvia-rosa">Nuestra Misión</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Seleccionamos frutas que han alcanzado un nivel de maduración alto, pero que siguen siendo completamente adecuadas para el consumo. Les damos una segunda vida transformándolas en parfaits deliciosos.
+                    </p>
+                </div>
+
+                <!-- Proceso -->
+                <div class="bg-white p-8 rounded-3xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-gradient-durazno rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-parvia-durazno">Nuestro Proceso</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recolectamos fresa, durazno y mora que, por su apariencia o maduración, podrían ser descartadas. Las transformamos con cuidado en productos frescos, atractivos y llenos de sabor y nutrición.
+                    </p>
+                </div>
+
+                <!-- Visión -->
+                <div class="bg-white p-8 rounded-3xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-gradient-mora rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-parvia-mora">Nuestra Visión</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Demostrar que cuidar el planeta y disfrutar lo rico pueden ir de la mano. Cada vaso es un paso hacia un mundo donde nada se desperdicia y todo se valora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Productos -->
+    <section id="nuestros-parfaits" class="py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-6">Nuestros <span class="text-parvia-durazno">Parfaits</span></h2>
+                <p class="text-lg text-gray-700">
+                    Tres variedades, un mismo propósito: sabor, frescura y respeto por el medio ambiente.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Durazno -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover border border-amber-100">
+                    <img src="Parfait Durazno.jpeg" alt="Parfait de Durazno" class="w-full h-72 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-600 mb-2">Parfait de Durazno</h3>
+                        <p class="text-gray-600 mb-4">
+                            Dulzura natural del durazno aprovechado en su punto óptimo, combinado con yogur y crujiente granola.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-lg text-gray-800">Delicioso y fresco</span>
+                            <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mora -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover border border-purple-100">
+                    <img src="Parfait Mora.jpeg" alt="Parfait de Mora" class="w-full h-72 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-purple-700 mb-2">Parfait de Mora</h3>
+                        <p class="text-gray-600 mb-4">
+                            Intenso sabor y color de moras maduras, convertidas en un parfait elegante, nutritivo y sostenible.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-lg text-gray-800">Natural y puro</span>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fresa -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover border border-rose-100">
+                    <img src="Parfait fresa.jpeg" alt="Parfait de Fresa" class="w-full h-72 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rose-600 mb-2">Parfait de Fresa</h3>
+                        <p class="text-gray-600 mb-4">
+                            Fresa en su máxima expresión de sabor y dulzura. Fresca, vibrante y con toda la responsabilidad de Parvia.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-lg text-gray-800">Irresistible</span>
+                            <span class="bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm font-medium">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impacto -->
+    <section id="impacto" class="py-24 bg-gradient-to-r from-rose-50 to-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-6">Tu elección <span class="text-parvia-mora">transforma</span></h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Cada Parvia que disfrutas es una fruta que no termina en la basura. Es un gesto pequeño que suma grandes cambios para el planeta.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-parvia-rosa flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Menos desperdicio</h4>
+                                <p class="text-gray-600">Recuperamos frutas que cumplen con todos los estándares de consumo pero que serían desechadas por su apariencia.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-parvia-durazno flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Sabor auténtico</h4>
+                                <p class="text-gray-600">Al usar frutas bien maduras, aprovechamos su máximo nivel de dulzura y sabor natural.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-parvia-mora flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Apoyo local</h4>
+                                <p class="text-gray-600">Trabajamos con productores locales, ayudando a dar valor a su cosecha completa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-parvia-rosa/20 to-parvia-durazno/20 rounded-3xl transform rotate-3"></div>
+                    <img src="Parfait fresa.jpeg" alt="Parfaits frescos" class="relative rounded-3xl shadow-2xl w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-6">¿Quieres probar <span class="text-parvia-durazno">Parvia</span>?</h2>
+                <p class="text-lg text-gray-300 mb-10">
+                    Escríbenos y sé parte del cambio. Delicioso, sano y sostenible.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-14 h-14 rounded-full bg-parvia-rosa/20 flex items-center justify-center text-parvia-rosa mx-auto mb-4 text-xl">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Ubicación</h4>
+                        <p class="text-gray-400">Bogotá, Colombia</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-14 h-14 rounded-full bg-parvia-durazno/20 flex items-center justify-center text-parvia-durazno mx-auto mb-4 text-xl">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Escríbenos</h4>
+                        <p class="text-gray-400">hola@parvia.com</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-14 h-14 rounded-full bg-parvia-mora/20 flex items-center justify-center text-parvia-mora mx-auto mb-4 text-xl">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Síguenos</h4>
+                        <p class="text-gray-400">@parvia_col</p>
+                    </div>
+                </div>
+                
+                <a href="mailto:hola@parvia.com" class="inline-block bg-parvia-rosa hover:bg-parvia-rosa/90 text-white font-semibold px-10 py-4 rounded-full shadow-lg transition-all transform hover:scale-105">
+                    Contáctanos <i class="fa fa-paper-plane ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="font-bold text-xl text-white mb-2">PARVIA</p>
+            <p class="mb-4">Rescatamos frutas, creamos delicias. 🍓🍑🫐</p>
+            <p class="text-sm">© 2026 Parvia. Todos los derechos reservados. Hecho con 💛 en Colombia.</p>
+        </div>
+    </footer>
+</body>
+</html>
